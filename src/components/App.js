@@ -5,7 +5,7 @@ import Page2 from './Page2'
 import Page3 from './Page3'
 
 const App = () => {
-    const [darkMode, setDarkMode] = useState(true)
+    const [darkMode, setDarkMode] = useState(false)
 
     return (
         <Router>
@@ -15,10 +15,9 @@ const App = () => {
                     <Link style={{color: darkMode? "white" : "black"}} to="/page2">Page 2</Link>
                     <Link style={{color: darkMode? "white" : "black"}} to="/page3">Page 3</Link>
                 </nav>
-                <button onClick={() => setDarkMode(!darkMode)}>darkMode</button>
-                <Route exact path="/page1" render={() => <Page1 darkMode={darkMode} setDarkMode={setDarkMode} /> } />
-                <Route exact path="/page2" render={() => <Page2 darkMode={darkMode} setDarkMode={setDarkMode} /> } />
-                <Route exact path="/page3" render={() => <Page3 darkMode={darkMode} setDarkMode={setDarkMode} /> } />
+                <Route exact path="/page1" component={() => <Page1 darkMode={darkMode} setDarkMode={setDarkMode} /> } />
+                <Route exact path="/page2" component={() => <Page2 darkMode={darkMode} setDarkMode={setDarkMode} /> } />
+                <Route exact path="/page3" component={() => <Page3 darkMode={darkMode} setDarkMode={setDarkMode} /> } />
             </div>
         </Router>
     )
