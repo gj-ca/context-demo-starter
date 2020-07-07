@@ -1,12 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import DarkMode from '../context/DarkMode'
 
 const NestedComponent = () => {
-    return (
-        <DarkMode.Consumer>
-            {value => <button onClick={() => value.setDarkMode(!value.darkMode)}>darkMode</button>}
-        </DarkMode.Consumer>
-    )
+    const {darkMode, setDarkMode} = useContext(DarkMode)
+    return <button onClick={() => setDarkMode(!darkMode)}>darkMode</button>
 }
 
 export default NestedComponent

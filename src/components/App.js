@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useReducer} from 'react'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import Page1 from './Page1'
 import Page2 from './Page2'
