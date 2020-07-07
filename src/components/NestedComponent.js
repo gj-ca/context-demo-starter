@@ -1,8 +1,11 @@
 import React from 'react'
+import DarkMode from '../context/DarkMode'
 
-const NestedComponent = ({darkMode, setDarkMode}) => {
+const NestedComponent = () => {
     return (
-        <button onClick={() => setDarkMode(!darkMode)}>darkMode</button>
+        <DarkMode.Consumer>
+            {value => <button onClick={() => value.setDarkMode(!value.darkMode)}>darkMode</button>}
+        </DarkMode.Consumer>
     )
 }
 

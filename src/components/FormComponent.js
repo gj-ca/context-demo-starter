@@ -3,7 +3,7 @@ import React from 'react'
 const FormComponent = ({darkMode, setDarkMode}) => {
     return (
         <>
-            <form style={{color: darkMode ? "white" : "black"}}> 
+            <form> 
                 <fieldset>
                     <label>Field 1</label>
                     <input />
